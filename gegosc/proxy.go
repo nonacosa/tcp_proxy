@@ -3,11 +3,11 @@ package gegosc
 import (
 	"crypto/rand"
 	"fmt"
+	"log"
 	"math/big"
 	"net"
 	"os"
 	"strconv"
-	"time"
 )
 
 var ListenPorts = make(map[int]string)
@@ -20,7 +20,7 @@ func ProxyStart(fromPort, toPort int, ip string) {
 
 		proxyListener, err := net.Listen("tcp", proxyAddr)
 		if err != nil {
-			fmt.Println("Unable to listen on: %s, error: %s\n", proxyAddr, err.Error())
+			log.Println("Unable to listen on: %s, error: %s\n", proxyAddr, err.Error())
 			os.Exit(1)
 		} else {
 			ListenPorts[fromPort] = proxyAddr
@@ -49,7 +49,7 @@ func ProxyStart(fromPort, toPort int, ip string) {
 			targetAddr := fmt.Sprintf("%s:%d", ip, toPort);
 			targetConn, err := net.Dial("tcp", targetAddr)
 			if err != nil {
-				fmt.Println("Unable to connect to: %s, error: %s\n", targetAddr, err.Error())
+				log.Println("Unable to connect to: %s, error: %s\n", targetAddr, err.Error())
 				proxyConn.Close()
 				continue
 			}
@@ -62,23 +62,23 @@ func ProxyStart(fromPort, toPort int, ip string) {
 				continue
 			}
 
-			//新建计时器，10秒后触发
-
-			go func() {
-				timer := time.NewTimer(time.Second * 20)
-
-				for {
-					// 多路复用通道
-					select {
-					case <-timer.C: // 计时器到时了
-						fmt.Println("stop")
-						closeProxy(proxyConn, targetConn, fromPort)
-						// 跳出循环
-
-					}
-
-				}
-			}()
+			////新建计时器，10秒后触发
+			//
+			//go func() {
+			//	timer := time.NewTimer(time.Second * 20)
+			//
+			//	for {
+			//		// 多路复用通道
+			//		select {
+			//		case <-timer.C: // 计时器到时了
+			//			fmt.Println("stop")
+			//			closeProxy(proxyConn, targetConn, fromPort)
+			//			// 跳出循环
+			//
+			//		}
+			//
+			//	}
+			//}()
 
 			eachProxyRequest(proxyConn, targetConn)
 		}
