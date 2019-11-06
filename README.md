@@ -53,7 +53,7 @@
  
  ```shell
  http://192.168.0.105/dev.es #测试 es
-  http://192.168.0.105/glob.elk #所有环境的 elk 日志查询
+ http://192.168.0.105/glob.elk #所有环境的 elk 日志查询
  http://192.168.0.105/prod.es #生产 es 慎重！！！！
  ```
  
