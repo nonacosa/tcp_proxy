@@ -26,11 +26,12 @@ const (
 
 	globElk = "glob.elk"
 
-	//springboardMachine = "http://192.168.0.105:"
-	springboardMachine = "http://localhost:"
+	springboardMachine = "http://192.168.18.153:"
+	//springboardMachine = "http://localhost:"
 )
 
 //todo custom
+
 // remote address and local port dictionary
 var remoteAddress = map[string][]string{
 	devEs:     {"9200", "9200", "172.24.167.144", "/_plugin/head/"},
@@ -39,8 +40,8 @@ var remoteAddress = map[string][]string{
 	devKonga:  {"1337", "1337", "172.24.167.144", ""},
 	devMinio:  {"9000", "9000", "172.24.167.144", ""},
 
-	//prodEs:     {"9200", "19200", "172.24.167.143", ""/_plugin/head/"},
-	prodEs:     {"60603", "19200", "39.104.96.233", "/_plugin/head/"},
+	prodEs:     {"9200", "19200", "172.24.167.143", "/_plugin/head/"},
+	//prodEs:     {"60603", "19200", "39.104.96.233", "/_plugin/head/"},
 	prodConsul: {"8500", "18500", "172.24.167.146", ""},
 	prodKong:   {"8000", "18000", "172.24.167.143", ""},
 	prodKonga:  {"1337", "11337", "172.24.167.143", ""},
@@ -50,6 +51,20 @@ var remoteAddress = map[string][]string{
 }
 
 func main() {
+
+	for _,v :=range remoteAddress{
+		fromPort, err := strconv.Atoi(v[1])
+		if err != nil {
+			log.Println("address error or cast number error")
+		}
+		toPort, err := strconv.Atoi(v[0])
+		if err != nil {
+			log.Println("address error or cast number error")
+		}
+		ip := v[2]
+		go gegosc.ProxyStart(fromPort, toPort, ip)
+
+	}
 
 	log.Println("英立讯阿里云VPN端口转发程序已启动 ...")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -61,14 +76,14 @@ func main() {
 		if err != nil {
 			log.Println("address error or cast number error")
 		}
-		toPort, err := strconv.Atoi(remoteInfoInfo[0])
-		if err != nil {
-			log.Println("address error or cast number error")
-		}
-		ip := remoteInfoInfo[2]
+		//toPort, err := strconv.Atoi(remoteInfoInfo[0])
+		//if err != nil {
+		//	log.Println("address error or cast number error")
+		//}
+		//ip := remoteInfoInfo[2]
 		path := remoteInfoInfo[3]
 
-		go gegosc.ProxyStart(fromPort, toPort, ip)
+		//go gegosc.ProxyStart(fromPort, toPort, ip)
 		http.Redirect(w, r, springboardMachine+strconv.Itoa(fromPort)+path, http.StatusMovedPermanently)
 
 		println()

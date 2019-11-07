@@ -1,16 +1,10 @@
 package routers
 
-import (
-	"../controllers"
-	"../gegosc"
-	"net/http"
-)
-
 func init() {
 
-	http.HandleFunc("/home", gegosc.Handler(controllers.Home))
-
-	http.HandleFunc("/generate", gegosc.Handler(controllers.Generate))
+	//http.HandleFunc("/home", gegosc.Handler(controllers.Home))
+	//
+	//http.HandleFunc("/generate", gegosc.Handler(controllers.Generate))
 
 	//box := rice.MustFindBox("../assets")
 	//cssFileServer := http.StripPrefix("/static/", http.FileServer(box.HTTPBox()))

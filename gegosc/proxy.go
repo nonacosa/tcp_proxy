@@ -10,20 +10,18 @@ import (
 	"strconv"
 )
 
-var ListenPorts = make(map[int]string)
+//var ListenPorts = make(map[int]string)
 
 func ProxyStart(fromPort, toPort int, ip string) {
 
 	proxyAddr := fmt.Sprintf(":%d", fromPort)
 
-	if _, ok := ListenPorts[fromPort]; !ok {
+	//if _, ok := ListenPorts[fromPort]; !ok {
 
 		proxyListener, err := net.Listen("tcp", proxyAddr)
 		if err != nil {
 			log.Println("Unable to listen on: %s, error: %s\n", proxyAddr, err.Error())
 			os.Exit(1)
-		} else {
-			ListenPorts[fromPort] = proxyAddr
 		}
 		defer proxyListener.Close()
 
@@ -83,22 +81,22 @@ func ProxyStart(fromPort, toPort int, ip string) {
 			eachProxyRequest(proxyConn, targetConn)
 		}
 
-	} else {
-		ProxyStart(fromPort+1, toPort, ip)
-		//return errors.New("CheckPortType ERROR: this port is exist")
-	}
+	//} else {
+	//	ProxyStart(fromPort+1, toPort, ip)
+	//	//return errors.New("CheckPortType ERROR: this port is exist")
+	//}
 
 }
 
 func eachProxyRequest(r, w net.Conn) {
 	// todo user:port 元祖 已经挂掉的 不准再打洞
-	if len(ListenPorts) > 2 {
-		r.Close()
-		w.Close()
-		print("权限不够关闭连接")
-		delete(ListenPorts, 10221)
-		return
-	}
+	//if len(ListenPorts) > 2 {
+	//	r.Close()
+	//	w.Close()
+	//	print("权限不够关闭连接")
+	//	delete(ListenPorts, 10221)
+	//	return
+	//}
 	//验证
 	go proxyRequest(r, w)
 	go proxyRequest(w, r)
@@ -108,10 +106,10 @@ func closeProxy(r, w net.Conn, port int) {
 	r.Close()
 	w.Close()
 
-	if _, ok := ListenPorts[port]; ok {
-		delete(ListenPorts, port)
-		print("权限时间到，系统关闭 %d 连接", port)
-	}
+	//if _, ok := ListenPorts[port]; ok {
+	//	delete(ListenPorts, port)
+	//	print("权限时间到，系统关闭 %d 连接", port)
+	//}
 
 }
 
