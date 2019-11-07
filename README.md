@@ -54,10 +54,19 @@
  
 ### dev 代表 阿里云测试环境 ， prod 代表阿里云生产环境:
 
-- [asdas](111)
-- - [asdas](111)
-- - [asdas](111)
-- - [asdas](111)
+- [devEs](http://192.168.18.153/dev.es)
+- [devConsul](http://192.168.18.153/dev.consul)
+- [devKong](http://192.168.18.153/dev.kong)
+- [devKonga](http://192.168.18.153/dev.konga)
+- [devMinio](http://192.168.18.153/dev.minio)
+
+- [prodEs](http://192.168.18.153/prod.es)
+- [prodConsul](http://192.168.18.153/prod.consul)
+- [prodKong](http://192.168.18.153/prod.kong)
+- [prodKonga](http://192.168.18.153/prod.konga)
+- [prodMinio](http://192.168.18.153/prod.minio)
+
+- [globElk](http://192.168.18.153/golb.elk)
  
 # 所有的 `prod` 都要慎重！！
 
