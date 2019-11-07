@@ -52,23 +52,20 @@
 
  目前我们的跳板机是 `192.168.18.153`，但是 windows 远程很容易被抢占，所以使用 golang 协程来转发。
  
-### dev 代表 阿里云测试环境 ， prod 代表阿里云生产环境:
+## 地址列表，生产一定要慎重！
 
-- [devEs](http://192.168.18.153/dev.es)
-- [devConsul](http://192.168.18.153/dev.consul)
-- [devKong](http://192.168.18.153/dev.kong)
-- [devKonga](http://192.168.18.153/dev.konga)
-- [devMinio](http://192.168.18.153/dev.minio)
-
-- [prodEs](http://192.168.18.153/prod.es)
-- [prodConsul](http://192.168.18.153/prod.consul)
-- [prodKong](http://192.168.18.153/prod.kong)
-- [prodKonga](http://192.168.18.153/prod.konga)
-- [prodMinio](http://192.168.18.153/prod.minio)
-
-- [globElk](http://192.168.18.153/golb.elk)
+- [测试环境 ES 地址](http://192.168.18.153/dev.es)
+- [测试环境 地址](http://192.168.18.153/dev.consul)
+- [测试环境 Konga 地址](http://192.168.18.153/dev.konga)
+- [测试环境 Minio 地址](http://192.168.18.153/dev.minio)
+- [生产环境 ES 地址 ！！](http://192.168.18.153/prod.es)
+- [生产环境 consul 地址 ！！](http://192.168.18.153/prod.consul)
+- [生产环境 Konga 地址 ！！](http://192.168.18.153/prod.konga)
+- [生产环境 Minio 地址 ！！](http://192.168.18.153/prod.minio)
+- [全局ELK日志地址](http://192.168.18.153:5601/app/kibana#/home?_g=())
  
-# 所有的 `prod` 都要慎重！！
+
+# 所有的 生产 都要慎重！！ 
 
 未来想支持：内网代理，命令行模式，可配置的远程列表，以及类似 SS 的代理模式「需要电脑设置 HTTP 代理」
 
