@@ -58,6 +58,7 @@
 - [测试环境 地址](http://192.168.18.153/dev.consul)
 - [测试环境 Konga 地址](http://192.168.18.153/dev.konga)
 - [测试环境 Minio 地址](http://192.168.18.153/dev.minio)
+- [测试环境 consul 地址](http://192.168.18.153/dev.consul)
 - [生产环境 ES 地址 ！！](http://192.168.18.153/prod.es)
 - [生产环境 consul 地址 ！！](http://192.168.18.153/prod.consul)
 - [生产环境 Konga 地址 ！！](http://192.168.18.153/prod.konga)
@@ -66,7 +67,7 @@
  
 - [电商测试环境最新 swagger](http://192.168.18.153/swagger.mall)
 # 所有的 生产 都要慎重！！ 
-
+http://192.168.18.153/dev.consul
 未来想支持：内网代理，命令行模式，可配置的远程列表，以及类似 SS 的代理模式「需要电脑设置 HTTP 代理」
 
 ## html 、css 等静态文件打成二进制
