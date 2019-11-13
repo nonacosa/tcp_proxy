@@ -26,6 +26,8 @@ const (
 
 	globElk = "glob.elk"
 
+	swaggerMall = "swagger.mall"
+
 	springboardMachine = "http://192.168.18.153:"
 	//springboardMachine = "http://localhost:"
 )
@@ -48,6 +50,8 @@ var remoteAddress = map[string][]string{
 	prodMinio:  {"9000", "19000", "172.24.167.143", ""},
 
 	globElk: {"5601", "5601", "172.24.167.150", ""},
+
+	swaggerMall: {"10221", "10221", "172.24.167.144", "/swagger-ui.html#"},
 }
 
 func main() {
