@@ -31,26 +31,36 @@
 
 ## 目前的代理：
 
+测试环境 、 投产环境 、 生产环境  的 consul kong konga es minio
+
 ```
-    devEs     = "dev.es"
-	devConsul = "dev.consul"
-	devKong   = "dev.kong"
-	devKonga  = "dev.konga"
-	devMinio  = "dev.minio"
+- [测试环境 ES 地址](http://192.168.18.153/dev.es)
+- [测试环境 地址](http://192.168.18.153/dev.consul)
+- [测试环境 Konga 地址](http://192.168.18.153/dev.konga)
+- [测试环境 Minio 地址](http://192.168.18.153/dev.minio)
+- [测试环境 consul 地址](http://192.168.18.153/dev.consul)
 
-	prodEs     = "prod.es"
-	prodConsul = "prod.consul"
-	prodKong   = "prod.kong"
-	prodKonga  = "prod.konga"
-	prodMinio  = "prod.minio"
+### 投产
 
-	globElk = "glob.elk"
+- [投产环境 ES 地址！](http://192.168.18.153/pre.es)
+- [投产环境 地址！](http://192.168.18.153/pre.consul)
+- [投产环境 Konga 地址！](http://192.168.18.153/pre.konga)
+- [投产环境 Minio 地址！](http://192.168.18.153/pre.minio)
+- [投产环境 consul 地址！](http://192.168.18.153/pre.consul)
+
+### 生产
+
+- [生产环境 ES 地址！](http://192.168.18.153/prod.es)
+- [生产环境 consul 地址！](http://192.168.18.153/prod.consul)
+- [生产环境 Konga 地址！](http://192.168.18.153/prod.konga)
+- [生产环境 Minio 地址！](http://192.168.18.153/prod.minio)
+
 ```
 
 
 ## 用法：
 
- 目前我们的跳板机是 `192.168.18.153`，但是 windows 远程很容易被抢占，所以使用 golang 协程来转发。
+ 目前我们的跳板机是 `192.168.18.153`，因为 windows 远程桌面只支持一个用户，很容易被抢占，所以使用 golang 协程来转发。
  
 ## 阿里云代理列表
 
