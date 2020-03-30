@@ -14,6 +14,7 @@ import (
 
 func ProxyStart(fromPort, toPort int, ip string) {
 
+	log.Println("正在打通 %d  -->  %s:%d", fromPort,ip,toPort)
 	proxyAddr := fmt.Sprintf(":%d", fromPort)
 
 	//if _, ok := ListenPorts[fromPort]; !ok {
