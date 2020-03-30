@@ -54,17 +54,34 @@
  
 ## 阿里云代理列表
 
+
+### 测试
+
 - [测试环境 ES 地址](http://192.168.18.153/dev.es)
 - [测试环境 地址](http://192.168.18.153/dev.consul)
 - [测试环境 Konga 地址](http://192.168.18.153/dev.konga)
 - [测试环境 Minio 地址](http://192.168.18.153/dev.minio)
 - [测试环境 consul 地址](http://192.168.18.153/dev.consul)
-- [生产环境 ES 地址 ！！](http://192.168.18.153/prod.es)
-- [生产环境 consul 地址 ！！](http://192.168.18.153/prod.consul)
-- [生产环境 Konga 地址 ！！](http://192.168.18.153/prod.konga)
-- [生产环境 Minio 地址 ！！](http://192.168.18.153/prod.minio)
+
+### 投产
+
+- [投产环境 ES 地址！](http://192.168.18.153/pre.es)
+- [投产环境 地址！](http://192.168.18.153/pre.consul)
+- [投产环境 Konga 地址！](http://192.168.18.153/pre.konga)
+- [投产环境 Minio 地址！](http://192.168.18.153/pre.minio)
+- [投产环境 consul 地址！](http://192.168.18.153/pre.consul)
+
+### 生产
+
+- [生产环境 ES 地址！](http://192.168.18.153/prod.es)
+- [生产环境 consul 地址！](http://192.168.18.153/prod.consul)
+- [生产环境 Konga 地址！](http://192.168.18.153/prod.konga)
+- [生产环境 Minio 地址！](http://192.168.18.153/prod.minio)
+
+
+
 - [全局ELK日志地址](http://192.168.18.153:5601/app/kibana#/home?_g=())
- 
+
 - [电商测试环境最新 swagger](http://192.168.18.153/swagger.mall)
 # 所有的 生产 都要慎重！！ 
 
